@@ -51,12 +51,12 @@
                     <article class="service">
                         <div class="service-titre-resume">
                             <div class="service-thumbnail">
-                                <a href="<?php the_permalink(); ?>">
+                                <a href="/nos-services#<?= $post->post_name ?>">
                                     <?php the_post_thumbnail('full'); ?>
                                 </a>
                             </div>
                             <div class="service-content">
-                                <a href="<?php the_permalink(); ?>">
+                                <a href="/nos-services#<?= $post->post_name ?>">
                                     <h3><?php the_title(); ?></h3>
                                 </a>
                                 <?php the_excerpt(); ?>

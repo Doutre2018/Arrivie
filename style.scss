@@ -10,6 +10,7 @@ Version: 1.0
 :root {
     --color-primary-1: #00aef0;
     --color-primary-2: #2bc2fc;
+    --tabs-color: #07bbff;
     --color-primary-3: #07bbff;
     --color-primary-4: #0079a7;
     --color-primary-5: #005e81;
@@ -37,7 +38,7 @@ Version: 1.0
     }
 }
 
-.qr {
+.qr-code {
     width: 100%;
     height: 100px;
     object-fit: contain;
@@ -153,7 +154,7 @@ main {
     }
 }
 
-.qr {
+.qr-code {
     width: 100px;
     height: 100px;
     img {
@@ -297,6 +298,13 @@ main {
     }
 }
 
+//ABOUT US
+.advgb-tab {
+    span {
+        color: inherit;
+    }
+}
+
 //TESTIMONIALS
 #temoignages {
     &.slick-slider .slick-slide,
@@ -389,6 +397,10 @@ main {
 .home {
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+.home-temoignages h2 {
+    margin-top: 4rem;
 }
 
 .slick-dotted.slick-slider {
