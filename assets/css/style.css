@@ -1,0 +1,193 @@
+/*
+Theme Name: IRHI-Theme
+Description: Un theme pour le site de l'IRHI.
+Author: Ludovic Doutre-Guay
+Author URI: http://doutreguay.com/
+Version: 1.0
+*/
+:root {
+  --color-primary-1: #00aef0;
+  --color-primary-2: #2bc2fc;
+  --color-primary-3: #07bbff;
+  --color-primary-4: #0079a7;
+  --color-primary-5: #005e81;
+  --color-primary-6: #1a2b6d;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  color: var(--color-primary-6);
+}
+
+main {
+  min-height: 100vh;
+  height: auto;
+}
+
+main p,
+main h1 {
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+#header {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: white;
+  border-bottom: 1px solid #1a2b6d;
+  top: 0;
+  z-index: 100;
+}
+
+#header * {
+  padding: 0;
+  margin: 0;
+}
+
+#masthead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#blog-title {
+  border: 6px solid #1a2b6d;
+  -webkit-transition: border 400ms linear;
+  transition: border 400ms linear;
+  padding: 0.5rem;
+  margin: 0.5rem 2rem;
+}
+
+#blog-title:hover {
+  border: 6px solid transparent;
+}
+
+#blog-title a {
+  color: #1a2b6d;
+  font: "arial black";
+  font-size: 26px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+#access {
+  width: 100%;
+}
+
+#access nav {
+  width: 100%;
+  height: 100%;
+}
+
+#access nav .menu-principal-container {
+  height: 100%;
+}
+
+#access nav .menu-principal-container ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+#access nav .menu-principal-container ul a {
+  color: #1a2b6d;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.qr {
+  width: 100px;
+  height: 100px;
+}
+
+.qr img {
+  width: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9000px;
+}
+
+.actualites article {
+  background-color: white;
+  height: 450px;
+}
+
+.services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: white;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.services .service {
+  margin: 1rem;
+  background-color: var(--color-primary-2);
+  padding: 1rem;
+  width: calc(33% - 2rem);
+}
+
+.wp-block-contact-form-7-contact-form-selector form {
+  width: 80%;
+}
+
+.wp-block-contact-form-7-contact-form-selector label {
+  width: 100%;
+  font-family: var(--font-family-lato);
+  font-weight: bold;
+}
+
+.wp-block-contact-form-7-contact-form-selector input,
+.wp-block-contact-form-7-contact-form-selector textarea {
+  width: 100%;
+  border: 1px solid var(--color-primary-6);
+  padding: 4px;
+  outline: none;
+  margin: 0.5rem 0;
+}
+
+.wp-block-contact-form-7-contact-form-selector input[type="submit"] {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 3rem;
+  background: var(--color-primary-4);
+  border: none;
+  border-radius: 12px;
+  margin: auto;
+  display: block;
+  color: white;
+}
+
+.slick-slider .slick-list {
+  max-height: calc(100vh - 195px);
+}
+
+.advgb-tab span {
+  color: inherit;
+}
+
+@media only screen and (max-width: 992px) {
+  .services .service {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
