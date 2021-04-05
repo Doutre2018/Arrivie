@@ -61,7 +61,7 @@
                                 </a>
                                 <?php the_excerpt(); ?>
                                 <a class="see-more" href="/nos-services#<?= $post->post_name ?>">
-                                    <?php pll_e("En savoir plus"); ?>
+              ª                      <?php pll_e("En savoir plus"); ?>
                                 </a>
                             </div>
                         </div>

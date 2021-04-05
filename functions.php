@@ -1,19 +1,20 @@
 <?php
 
 
-load_theme_textdomain( 'irhi-theme', TEMPLATEPATH . '/languages' );
- 
+load_theme_textdomain('irhi-theme', TEMPLATEPATH . '/languages');
+
 $locale = get_locale();
 $locale_file = TEMPLATEPATH . "/languages/$locale.php";
-if ( is_readable($locale_file) )
+if (is_readable($locale_file))
     require_once($locale_file);
- 
 
-function get_page_number() {
-    if ( get_query_var('paged') ) {
-        print ' | ' . __( 'Page ' , 'irhi-theme') . get_query_var('paged');
+
+function get_page_number()
+{
+    if (get_query_var('paged')) {
+        print ' | ' . __('Page ', 'irhi-theme') . get_query_var('paged');
     }
-} 
+}
 
 //Define Assets
 define('ECM_ASSETS_URL', trailingslashit(get_template_directory_uri()) . 'assets/');
@@ -21,7 +22,7 @@ function irhi_theme_style_et_scripts()
 {
     //Jquery
     wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
 
     //Slick Slider
     wp_enqueue_style('slick-style', ECM_ASSETS_URL . 'js/slick/slick.css');
@@ -33,7 +34,7 @@ function irhi_theme_style_et_scripts()
     wp_enqueue_script('boot3', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', array('jquery'), '', true);
 
     //Font Awesome
-    wp_enqueue_style( 'custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css' );
+    wp_enqueue_style('custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
 
     //Stylesheet
     wp_enqueue_style('style', ECM_ASSETS_URL . 'css/style.css');
@@ -47,31 +48,30 @@ add_action('wp_enqueue_scripts', 'irhi_theme_style_et_scripts');
 //SETUP
 function irhi_theme_setup()
 {
-    add_theme_support( 'custom-logo', array(
+    add_theme_support('custom-logo', array(
         'height'      => 400,
         'width'       => 400,
         'flex-height' => true,
         'flex-width'  => true,
-        'header-text' => array( 'site-title', 'site-description' ),
-    ) );
+        'header-text' => array('site-title', 'site-description'),
+    ));
     add_theme_support('custom-header');
     add_theme_support('align-wide');
     add_theme_support('post-thumbnails');
 
     add_post_type_support('page', 'excerpt');
 
-    pll_register_string('more','En savoir plus');
+    pll_register_string('more', 'En savoir plus');
 
-    pll_register_string('temoignages','Témoignages');
-    pll_register_string('services','Services');
+    pll_register_string('temoignages', 'Témoignages');
+    pll_register_string('services', 'Services');
 
-    pll_register_string('up','Aller vers le haut');
-    pll_register_string('copyright','Copyright');
-    pll_register_string('reserved','All Rights Reserved');
+    pll_register_string('up', 'Aller vers le haut');
+    pll_register_string('copyright', 'Copyright');
+    pll_register_string('reserved', 'All Rights Reserved');
 
-    pll_register_string('email','Courriel');
-    pll_register_string('phone','Téléphone');
-    
+    pll_register_string('email', 'Courriel');
+    pll_register_string('phone', 'Téléphone');
 }
 add_action('after_setup_theme', 'irhi_theme_setup');
 
@@ -97,8 +97,9 @@ add_action('init', 'register_my_menus');
 
 //add phone number to users
 add_filter('user_contactmethods', 'custom_user_contactmethods');
-function custom_user_contactmethods($user_contact){ 
-  $user_contact['ext_phone'] = 'Phone number';
-  
-  return $user_contact;
+function custom_user_contactmethods($user_contact)
+{
+    $user_contact['ext_phone'] = 'Phone number';
+
+    return $user_contact;
 }
