@@ -42,34 +42,44 @@
             </h2>
         </header>
         <section class="services">
+            <div class="row">
 
-            <?php $evenements_query = new WP_Query(array(
-                'post_type' => 'services', 'posts_per_page' => '5',
-            ));
-            if ($evenements_query->have_posts()) : ?>
-                <?php while ($evenements_query->have_posts()) : $evenements_query->the_post(); ?>
-                    <article class="service">
-                        <div class="service-titre-resume">
-                            <div class="service-thumbnail">
-                                <a href="/nos-services#<?= $post->post_name ?>">
-                                    <?php the_post_thumbnail('full'); ?>
-                                </a>
+                <?php
+                $lang = get_bloginfo('language');
+                $page_service = '/nos-services';
+                if ($lang == 'en-GB') {
+                    $page_service = '/en/our-services/';
+                } else if ($lang == 'es') {
+                    $page_service = '/es/nuestros-servicios/';
+                }
+                $evenements_query = new WP_Query(array(
+                    'post_type' => 'services', 'posts_per_page' => '5',
+                ));
+                if ($evenements_query->have_posts()) : ?>
+                    <?php while ($evenements_query->have_posts()) : $evenements_query->the_post(); ?>
+                        <article class="service col-md-4">
+                            <div class="service-titre-resume">
+                                <div class="service-thumbnail">
+                                    <a href="<?= $page_service ?>#<?= $post->post_name ?>">
+                                        <?php the_post_thumbnail('full'); ?>
+                                    </a>
+                                </div>
+                                <div class="service-content">
+                                    <a href="<?= $page_service ?>#<?= $post->post_name ?>">
+                                        <h3><?php the_title(); ?></h3>
+                                    </a>
+                                    <?php the_excerpt(); ?>
+                                    <a class="see-more" href="<?= $page_service ?>#<?= $post->post_name ?>">
+                                        <?php pll_e("En savoir plus"); ?>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="service-content">
-                                <a href="/nos-services#<?= $post->post_name ?>">
-                                    <h3><?php the_title(); ?></h3>
-                                </a>
-                                <?php the_excerpt(); ?>
-                                <a class="see-more" href="/nos-services#<?= $post->post_name ?>">
-              ª                      <?php pll_e("En savoir plus"); ?>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
+                        </article>
 
-                <?php endwhile;
-                wp_reset_postdata(); ?>
-            <?php endif; ?>
+                    <?php endwhile;
+                    wp_reset_postdata(); ?>
+                <?php endif; ?>
+            </div>
         </section>
     </section>
     <?php $evenements_query = new WP_Query(array(

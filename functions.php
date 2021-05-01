@@ -27,7 +27,7 @@ function irhi_theme_style_et_scripts()
     //Slick Slider
     wp_enqueue_style('slick-style', ECM_ASSETS_URL . 'js/slick/slick.css');
     wp_enqueue_style('slick-style-theme', ECM_ASSETS_URL . 'js/slick/slick-theme.css');
-    wp_enqueue_style('slick-js', ECM_ASSETS_URL . 'js/slick/slick.js');
+    wp_enqueue_script('slick-js', ECM_ASSETS_URL . 'js/slick/slick.js');
 
     //Bootstrap
     wp_enqueue_style('bootstrap4', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css');
@@ -37,8 +37,7 @@ function irhi_theme_style_et_scripts()
     wp_enqueue_style('custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
 
     //Stylesheet
-    wp_enqueue_style('style', ECM_ASSETS_URL . 'css/style.css');
-    // wp_enqueue_style('style', get_stylesheet_uri());
+    wp_enqueue_style('style', get_stylesheet_uri());
 
     //Script
     wp_enqueue_script('script', ECM_ASSETS_URL . '/js/custom.js', array('jquery'), 1.1, true);

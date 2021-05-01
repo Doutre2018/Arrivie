@@ -2,7 +2,7 @@
 Theme Name: IRHI-Theme
 Description: Un theme pour le site de l'IRHI.
 Author: Ludovic Doutre-Guay
-Author URI: http://doutreguay.com/
+Author URI: http://doutreguay.ca/
 Version: 1.0
 */
 
@@ -348,14 +348,14 @@ main {
 
 //FRONT PAGE
 .front-page-container {
-    &>* {
+    & > * {
         width: 100%;
         margin-right: auto;
         margin-left: auto;
     }
     .post {
         width: 100%;
-        &>* {
+        & > * {
             width: 100%;
         }
         p {
@@ -383,7 +383,8 @@ main {
             color: inherit;
             text-decoration: none;
         }
-        h2 {
+        h2,
+        h3 {
             text-align: center;
         }
         img {
@@ -416,6 +417,126 @@ main {
     margin: 0;
 }
 
+.wp-block-preformatted {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary-6);
+}
+#bars-btn {
+    display: none;
+}
+@media (max-width: 640px) {
+    #masthead {
+        position: relative;
+    }
+    .slick-slider .slick-slide, .slick-slider .slick-slide img {
+        height: 100% !important;
+    }
+    #footer
+    {
+        flex-direction: column;
+        .footer-section.right
+        {
+            display: none;
+        }
+        .footer-section.left
+        {
+            text-align: center;
+        }
+        .copyright
+        {
+            display: block;
+            padding: 1rem;
+        }
+    }
+    .services-page {
+        article:nth-child(even) {
+            .wp-block-columns
+            {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+    .front-page-container {
+        & > * {
+            max-width: 90%;
+        }
+        .post {
+            max-width: 100%;
+            & > * {
+                max-width: 90%;
+            }
+        }
+        .alignfull {
+            max-width: 100%;
+        }
+    }
+    #access {
+        #topnav {
+            #bars-btn {
+                display: block;
+                font-size: 2rem;
+                height: auto;
+                width: auto;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                z-index: 1000;
+                color: white;
+                background-color: var(--main-1);
+                border-radius: 10px;
+                text-align: center;
+                padding: 5px;
+                line-height: 1;
+            }
+            .navbar {
+                max-height: 0;
+                height: auto;
+                overflow: hidden;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 70px;
+                transition: all 1000ms linear;
+                display: flex;
+                width: 100%;
+                background: white;
+                ul {
+                    flex-direction: column;
+                    justify-content: space-around;
+                    overflow: visible;
+                    width: 100%;
+                    li {
+                        a {
+                            text-align: left;
+                            display: block;
+                            width: 100%;
+                        }
+                        ul {
+                            border: none;
+                            display: block;
+                            padding-left: 1rem;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 992px) {
     //Services
     .services {
@@ -425,14 +546,17 @@ main {
     }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 640px) {
+    .navbar {
+        max-height: 100% !important;
+    }
     .front-page-container {
-        &>* {
+        & > * {
             max-width: 540px;
         }
         .post {
             max-width: 100%;
-            &>* {
+            & > * {
                 max-width: 540px;
             }
             .alignfull {
@@ -444,12 +568,12 @@ main {
 
 @media (min-width: 768px) {
     .front-page-container {
-        &>* {
+        & > * {
             max-width: 720px;
         }
         .post {
             max-width: 100%;
-            &>* {
+            & > * {
                 max-width: 720px;
             }
         }
@@ -461,12 +585,12 @@ main {
 
 @media (min-width: 992px) {
     .front-page-container {
-        &>* {
+        & > * {
             max-width: 960px;
         }
         .post {
             max-width: 100%;
-            &>* {
+            & > * {
                 max-width: 960px;
             }
         }
@@ -478,12 +602,12 @@ main {
 
 @media (min-width: 1200px) {
     .front-page-container {
-        &>* {
+        & > * {
             max-width: 1140px;
         }
         .post {
             max-width: 100%;
-            &>* {
+            & > * {
                 max-width: 1140px;
             }
         }

@@ -18,5 +18,16 @@ window.onload = () => {
     //     }
     //     prevScrollpos = currentScrollPos;
     // }
+    const barsbtn = document.getElementById('bars-btn');
+    const navbar = document.querySelector('.navbar')
+    barsbtn.onclick = () => {
+        console.log(navbar.style.maxHeight)
+        if (navbar.style.maxHeight === '100vh') {
+            navbar.style.maxHeight = '0';
+        }
+        else {
+            navbar.style.maxHeight = '100vh';
+        }
+    }
 
 }
