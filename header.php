@@ -63,7 +63,9 @@
                     <button id='bars-btn'>
                         <i class="fas fa-bars"></i>
                     </button>
-                    <?php wp_nav_menu(array('theme_location' => 'main-menu', 'container_class' => 'navbar')); ?>
+                    <div class="navbar">
+                        <?php wp_nav_menu(array('theme_location' => 'main-menu', 'container_class' => 'navbar')); ?>
+                    </div>
                 </nav>
             </div>
 

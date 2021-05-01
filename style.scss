@@ -92,8 +92,9 @@ main {
         }
     }
     img {
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: auto;
+        object-fit: contain;
     }
 }
 
@@ -478,6 +479,12 @@ main {
         .alignfull {
             max-width: 100%;
         }
+    }
+    #branding
+    {
+        display:flex;
+        align-items: center;
+        justify-content: center;
     }
     #access {
         #topnav {
